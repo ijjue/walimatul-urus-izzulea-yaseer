@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-image: url("assets/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+body h1, h2, h3, p{
+    margin-bottom: 0px;
+}
+
+body h1 {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+body h3 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: url('assets/images/wedding-bg.jpg') center/cover no-repeat; */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+
+#main-content {
+    display: block; /*nanti tukar display:none*/
+    padding: 20px;
+}
+
+#music {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+.divider {
+    height: 45px;
+}
+
+.save-calendar {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    margin: 16px;
+}
+.save-calendar a {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+}
+.save-calendar img {
+    width: 50px;
+    height: 50px;
+    margin: 16px;
+}
