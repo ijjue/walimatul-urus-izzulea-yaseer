@@ -1,6 +1,23 @@
 function revealContent(){
+
+    document.getElementById("hero").classList.add("slide-up");
+
+    const bukaBtn = document.getElementById("bukaBtn");
+    bukaBtn.style.opacity = "0";
+    setTimeout(() => {
+        bukaBtn.style.display = "none";
+    }, 400);
+
+    const navbar = document.getElementById("bottomNavbar");
+    navbar.classList.remove("hidden");
+    navbar.classList.add("show");
+
     // Show main content
-    document.getElementById('main-content').style.display = 'block';
+    const mainContent = document.getElementById("main-content");
+    mainContent.classList.remove("hidden");
+    setTimeout(() => {
+        mainContent.classList.add("fade-in");
+    }, 500);
 
     // Play background music
     const videoID = "Ptk_1Dc2iPY";

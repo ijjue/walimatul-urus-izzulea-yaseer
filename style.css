@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@400;700&display=swap');
 
+*, html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 70px;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     text-align: center;
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
 }
@@ -32,14 +38,38 @@ body h3 {
     font-size: 20px;
 }
 
-.hero {
+#hero {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    background-color: white;
+    transition: transform 1s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 415px;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+}
+
+.buka-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 82%;
+    z-index: 2;
+    transition: opacity 0.5s ease;
 }
 
 .navbar {
@@ -52,9 +82,41 @@ body h3 {
     color: black;
 }
 
+.hidden {
+    display: none;
+}
+
 #main-content {
-    display: none; /*nanti tukar display:none*/
-    padding: 10px;
+    scroll-margin-top: 100px;
+    transition: opacity 1s ease;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+#hero.slide-up {
+    transform: translateY(-60vh);
+}
+
+#bottomNavbar.show{
+    display: block;
+    animation: slideInUp 0.7s ease forwards;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+#main-content.fade-in {
+    opacity: 1;
+}
+
+.section {
+    padding-top: 45px;
 }
 
 #music {
@@ -88,18 +150,19 @@ body h3 {
 }
 
 .container {
-    width: 390px;
+    width: 415px;
     height: 100vh;
     overflow-y: auto;
     position: relative;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    padding-bottom: 100px;
 }
 
 /* Background fixed inside the container */
 .container::before {
     content: "";
     position: fixed;
-    width: 390px;
+    width: 415px;
     height: 100vh;
     top: 0;
     left: 50%;
@@ -108,4 +171,38 @@ body h3 {
     background-size: cover;
     background-position: center;
     z-index: -1;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+}
+
+.role {
+    font-size: 0.85em;
+    color: #999;
+    margin: 0;
+}
+
+.contact-icons a {
+    margin-left: 10px;
+}
+
+.contact-icons img {
+    width: 24px;
+    height: 24px;
 }
