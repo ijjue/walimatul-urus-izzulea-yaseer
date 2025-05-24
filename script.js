@@ -1,52 +1,43 @@
-function revealContent(){
-
+function revealContent() {
     const hero = document.getElementById("hero");
     const main = document.getElementById("main-content");
     const nav = document.getElementById("bottomNavbar");
+    const bukaBtn = document.getElementById("bukaBtn");
 
+    // Hide scroll while animating
     document.body.style.overflow = "hidden";
+
+    // Animate hero sliding up
     hero.style.transform = "translateY(-100vh)";
 
-    setTimeout(() => {
-        // Make hero part of the scrollable content
-        hero.style.position = "relative";
-        hero.style.transform = "none";
-        // hero.classList.add("hide-button");
-
-        // Restore scroll
-        document.body.style.overflow = "auto";
-
-        // Reveal content and navbar
-        main.classList.remove("hidden");
-        main.classList.add("fade-in");
-        nav.classList.remove("hidden");
-        nav.classList.add("show");
-
-        // Scroll to content
-        main.scrollIntoView({ behavior: "smooth" });
-    }, 1000);
-
-    const bukaBtn = document.getElementById("bukaBtn");
+    // Hide the button
     bukaBtn.style.opacity = "0";
     setTimeout(() => {
         bukaBtn.style.display = "none";
     }, 400);
 
-    // const navbar = document.getElementById("bottomNavbar");
-    // navbar.classList.remove("hidden");
-    // navbar.classList.add("show");
+    // After hero finishes sliding up...
+    setTimeout(() => {
+        // Restore scroll
+        // document.body.style.overflow = "auto";
 
-    // Show main content
-    // const mainContent = document.getElementById("main-content");
-    // mainContent.classList.remove("hidden");
-    // setTimeout(() => {
-    //     mainContent.classList.add("fade-in");
-    // }, 500);
+        // Make hero scrollable and part of layout
+        hero.style.position = "relative";
+        hero.style.transform = "none";
+        hero.classList.add("slide-up");
 
-    // Play background music
-    const videoID = "Ptk_1Dc2iPY";
-    const musicUrl = `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&start=2&playlist=${videoID}`;
-    const bgMusic = document.getElementById('bgMusic');
-    bgMusic.src = musicUrl;
-    bgMusic.style.display = 'block';
+        // Reveal main content
+        main.classList.remove("hidden");
+        main.classList.add("fade-in");
+
+        // Show navbar
+        nav.classList.remove("hidden");
+        nav.classList.add("show");
+
+        // ✅ Smooth scroll only AFTER layout settles
+        setTimeout(() => {
+            main.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100); // small delay ensures layout is applied
+
+    }, 1000); // wait for hero to finish slide
 }

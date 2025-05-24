@@ -21,9 +21,9 @@ body h1, h3, p{
 
 body h1 {
     font-family: "Great Vibes", cursive;
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
-    font-size: 25px;
+    font-size: 24px;
     /* margin: 20px; */
 }
 
@@ -45,7 +45,7 @@ body h3 {
 }
 
 #hero {
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,7 +74,7 @@ body h3 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 82%;
+    top: 76%;
     z-index: 2;
     transition: opacity 0.5s ease;
 }
@@ -94,15 +94,15 @@ body h3 {
 }
 
 #main-content {
-    transition: opacity 1s ease;
+    transition: opacity 10s ease;
     padding: 1rem;
-    margin-top: 1rem;
+    padding-top: 50px;
 }
 
 .main {
     padding-top: 100vh;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease;
 }
 
 .main.fade-in {
@@ -119,7 +119,7 @@ body h3 {
 
 #bottomNavbar.show{
     display: block;
-    animation: slideInUp 1s ease forwards;
+    animation: slideInUp 2s ease forwards;
 }
 
 @keyframes slideInUp {
@@ -141,6 +141,11 @@ body h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* align-items: center; */
+}
+
+#location {
+    display: flex;
     align-items: center;
 }
 
