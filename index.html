@@ -11,6 +11,25 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <!-- 📌 Bottom Navigation Bar -->
+    <div class="bottom-navbar">
+        <nav class="navbar bg-dark text-white p-3 hidden" id="bottomNavbar">
+            <div class="container-fluid d-flex justify-content-around">
+                <a href="#music" class="nav-link text-center text-white">
+                    <i class="fa-solid fa-music"></i><br><span>Muzik</span>
+                </a>
+                <a href="#calendar" class="nav-link text-center text-white">
+                    <i class="fa-solid fa-calendar-days"></i><br><span>Kalendar</span>
+                </a>
+                <a href="#location" class="nav-link text-center text-white">
+                    <i class="fa-solid fa-location-dot"></i><br><span>Lokasi</span>
+                </a>
+                <a href="#contact" class="nav-link text-center text-white">
+                    <i class="fa-solid fa-phone"></i><br><span>Hubungi</span>
+                </a>
+            </div>
+        </nav>
+    </div>
 <div class="container">
     <!-- Background Section -->
     <div id="hero">
@@ -19,24 +38,6 @@
             <button type="button" class="btn btn-success buka-btn" id="bukaBtn" onclick="revealContent()">BUKA</button>
         </div>
     </div>
-
-    <!-- 📌 Bottom Navigation Bar -->
-    <nav class="navbar fixed-bottom bg-dark text-white p-3 hidden" id="bottomNavbar">
-        <div class="container-fluid d-flex justify-content-around">
-            <a href="#music" class="nav-link text-center text-white">
-                <i class="fa-solid fa-music"></i><br><span>Muzik</span>
-            </a>
-            <a href="#calendar" class="nav-link text-center text-white">
-                <i class="fa-solid fa-calendar-days"></i><br><span>Kalendar</span>
-            </a>
-            <a href="#location" class="nav-link text-center text-white">
-                <i class="fa-solid fa-location-dot"></i><br><span>Lokasi</span>
-            </a>
-            <a href="#contact" class="nav-link text-center text-white">
-                <i class="fa-solid fa-phone"></i><br><span>Hubungi</span>
-            </a>
-        </div>
-    </nav>
 
     <div id="main-content" class="main hidden">
         <!-- Content -->
