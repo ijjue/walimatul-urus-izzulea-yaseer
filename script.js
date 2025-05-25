@@ -39,12 +39,29 @@ function revealContent() {
             main.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100); // small delay ensures layout is applied
 
+        // ✅ Autoplay audio
+        const bgMusic = document.getElementById("bgMusic");
+        bgMusic.play().catch(err => {
+            console.warn("Audio autoplay blocked:", err);
+        });
     }, 1000); // wait for hero to finish slide
 
-    // Play background music
-        const videoID = "Ptk_1Dc2iPY";
-        const musicUrl = `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&start=2&playlist=${videoID}`;
-        const bgMusic = document.getElementById('bgMusic');
-        bgMusic.src = musicUrl;
-        bgMusic.style.display = 'block';
 }
+
+// ✅ Toggle button logic
+const audio = document.getElementById("bgMusic");
+const audioBtn = document.getElementById("audioToggleBtn");
+const audioIcon = document.getElementById("audioIcon");
+
+audioBtn.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        audioIcon.classList.remove("fa-volume-mute");
+        audioIcon.classList.add("fa-volume-up");
+    } else {
+        audio.pause();
+        audioIcon.classList.remove("fa-volume-up");
+        audioIcon.classList.add("fa-volume-mute");
+    }
+});
+
