@@ -39,12 +39,12 @@ function revealContent() {
             main.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100); // small delay ensures layout is applied
 
-        // Play background music
+    }, 1000); // wait for hero to finish slide
+
+    // Play background music
         const videoID = "Ptk_1Dc2iPY";
         const musicUrl = `https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&start=2&playlist=${videoID}`;
         const bgMusic = document.getElementById('bgMusic');
         bgMusic.src = musicUrl;
         bgMusic.style.display = 'block';
-
-    }, 1000); // wait for hero to finish slide
 }
