@@ -84,9 +84,13 @@ body h3 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 76%;
+    top: 78%;
     z-index: 2;
     transition: opacity 0.5s ease;
+    background-color: #e1a730;
+    border: none;
+    color: white;
+    width: 70px;
 }
 
 .bismillah {
@@ -226,7 +230,7 @@ body h3 {
     margin: 16px;
 }
 
-.container {
+.containers {
     width: 415px;
     height: 100vh;
     overflow-y: auto;
@@ -238,7 +242,7 @@ body h3 {
 }
 
 /* Background fixed inside the container */
-.container::before {
+.containers::before {
     content: "";
     position: fixed;
     width: 415px;
@@ -284,4 +288,10 @@ body h3 {
 .contact-icons img {
     width: 24px;
     height: 24px;
+}
+
+@media only screen and (min-width: 960px) {
+    .containers, .card-wrapper, .containers::before, .navbar {
+        max-width: 390px;
+    }
 }
